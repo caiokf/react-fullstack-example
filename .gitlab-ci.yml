@@ -1,0 +1,87 @@
+image: node:latest
+stages: [prepare, test, build, deploy, e2e]
+before_script:
+  - npm install -g lerna
+cache:
+  paths:
+    - packages/*/node_modules
+
+variables:
+  CONTAINER_REGISTRY_DOMAIN: registry.gitlab.com
+
+# -------------------------------------------------------------------------
+# Prepare
+#
+install:
+  stage: prepare
+  script:
+    - lerna bootstrap
+  artifacts:
+    paths:
+      - packages/*/node_modules
+
+
+# -------------------------------------------------------------------------
+# Test stage
+#
+lint:
+  stage: test
+  script: npm run eslint
+
+unit test:
+  stage: test
+  script: npm run test
+
+
+# -------------------------------------------------------------------------
+# Build stage
+#
+build common:
+  stage: build
+  script: echo "WIP"
+
+build api:
+  stage: build
+  script: echo "WIP"
+
+build media-processing-service:
+  stage: build
+  script: echo "WIP"
+
+build realignment-service:
+  stage: build
+  script: echo "WIP"
+
+build transcription-service:
+  stage: build
+  script: echo "WIP"
+
+build webapp:
+  stage: build
+  script: echo "WIP"
+
+
+# -------------------------------------------------------------------------
+# Deploy stage
+#
+deploy to development:
+  stage: deploy
+  script: echo "WIP"
+
+deploy to staging:
+  stage: deploy
+  script: echo "WIP"
+  when: manual
+
+deploy to production:
+  stage: deploy
+  script: echo "WIP"
+  when: manual
+
+
+# -------------------------------------------------------------------------
+# End to End testing stage
+#
+e2e:
+  stage: e2e
+  script: echo "WIP"

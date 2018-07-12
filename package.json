@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "eslint": "lerna exec eslint .",
+    "start": "lerna run start --parallel",
+    "test": "CI=true lerna run test"
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  }
+}

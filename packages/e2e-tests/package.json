@@ -1,0 +1,24 @@
+{
+  "name": "@caiokf/e2e-tests",
+  "version": "0.1.0",
+  "description": "End-to-end tests",
+  "main": "index.js",
+  "scripts": {
+    "cypress:staging": "cypress open",
+    "cypress:open": "cypress open --env env=local"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.5",
+    "cypress": "^3.0.1",
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-react": "^7.10.0",
+    "fs-extra": "^6.0.1"
+  },
+  "dependencies": {
+    "convict": "^4.3.1"
+  }
+}
